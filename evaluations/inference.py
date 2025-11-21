@@ -134,7 +134,11 @@ def load_model(TESTING_MODEL, device):
         from minicpmo_modeling import MiniCPMO
         ckpt_path = f"{CKPT_DIR}/MiniCPM-o-2_6"
         model = MiniCPMO({"model_path": ckpt_path, "device": 0})
-        
+    elif TESTING_MODEL == "Qwen2.5VL":
+        from qwen25vl_modeling import Qwen25VL
+        ckpt_path = f"{CKPT_DIR}/Qwen2.5-VL"
+        model = Qwen25VL({"model_path": ckpt_path, "device": 0})
+
     return model
 
 
@@ -147,10 +151,10 @@ def main():
                     choices=["VideoChatGPT", "VideoChat2", "VideoLLaVA", "LLaMA-VID","MiniGPT4-Video", "PLLaVA", "LLaVA-NeXT-Video", "ShareGPT4Video",
                                  "Gemini-1.5-pro", "GPT4O",
                                  "LongVA", "LongVALlama", "LongVILA", "LongLLaVA", "VideoLLaMB", "M4", "VideoXL",
-                                 "LLaMA-VID-13B", "PLLaVA-13B", 
+                                 "LLaMA-VID-13B", "PLLaVA-13B",
                                  "PLLaVA-34B", "LLaVA-NeXT-Video-34B",
                                  "VideoOnline", "VideoLLaMBOnline", "M4Online", "InternLMXCO", "MiniCPM-o",
-                                 "VideoLLaMA2", "M4-Audio", "M4-AudioOnline"], required=True)
+                                 "VideoLLaMA2", "M4-Audio", "M4-AudioOnline", "Qwen2.5VL"], required=True)
     parser.add_argument("--benchmark_name", type=str, # general task
                         default="", 
                         choices=["ap", "md", "sg", "si", "pa", "pt"], required=True)
