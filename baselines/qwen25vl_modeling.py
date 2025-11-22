@@ -21,7 +21,8 @@ class Qwen25VL(ViLLMBaseModel):
         self.model = Qwen2VLForConditionalGeneration.from_pretrained(
             self.model_path,
             torch_dtype=torch.bfloat16,
-            device_map=f"cuda:{self.device}"
+            device_map=f"cuda:{self.device}",
+            attn_implementation="sdpa",
         )
         self.processor = AutoProcessor.from_pretrained(self.model_path)
 
