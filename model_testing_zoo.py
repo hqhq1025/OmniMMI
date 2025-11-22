@@ -44,7 +44,7 @@ parser.add_argument("--model_name", type=str,
                              "PLLaVA-13B", "PLLaVA-34B", "LLaVA-NeXT-Video-34B",
                              "LongVA", "LongVILA", "LongLLaVA", "VideoLLaMB", "VideoXL", "InternLMXCO",
                              "VideoOnline", "VideoLLaMBOnline", "M4", "M4Online", "MiniCPM-o",
-                             "VideoLLaMA2", "M4-Audio", "M4-AudioOnline", "Qwen2.5-VL"])
+                             "VideoLLaMA2", "M4-Audio", "M4-AudioOnline", "Qwen2.5VL"])
 args = parser.parse_args()
 TESTING_MODEL=args.model_name
 
@@ -186,7 +186,7 @@ def load_model(TESTING_MODEL):
         from intersuitonline_av_modeling import InterSuitOnlineAV
         ckpt_path = f"{CKPT_DIR}/M4-Audio-LongVA-7B-Qwen2"
         model = InterSuitOnlineAV({"model_path": ckpt_path, "device": 0})
-    elif TESTING_MODEL == "Qwen2.5-VL":
+    elif TESTING_MODEL == "Qwen2.5VL":
         from qwen25vl_modeling import Qwen25VL
         ckpt_path = f"{CKPT_DIR}/Qwen2.5-VL-3B-Instruct"
         model = Qwen25VL({"model_path": ckpt_path, "device": 0})

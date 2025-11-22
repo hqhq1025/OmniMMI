@@ -23,7 +23,7 @@ IFS=',' read -ra GPULIST <<< "$gpu_list"
 CHUNKS=${#GPULIST[@]}
 
 
-model_names=("MiniGPT4-Video" "VideoChatGPT" "VideoLLaVA" "VideoChat2" "LLaMA-VID" "PLLaVA" "LLaVA-NeXT-Video" "Qwen2.5-VL")
+model_names=("MiniGPT4-Video" "VideoChatGPT" "VideoLLaVA" "VideoChat2" "LLaMA-VID" "PLLaVA" "LLaVA-NeXT-Video" "Qwen2.5VL")
 environments=("minigpt4_video" "video_chatgpt" "videollava" "videochat2" "llamavid" "pllava" "llavanext" "qwen25vl")
 
 

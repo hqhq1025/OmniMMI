@@ -12,7 +12,7 @@ IFS=',' read -ra GPULIST <<< "$gpu_list"
 CHUNKS=${#GPULIST[@]}
 
 
-model_names=("VideoChatGPT" "VideoChat2" "VideoLLaVA" "LLaMA-VID" "MiniGPT4-Video" "PLLaVA" "LLaVA-NeXT-Video" "ShareGPT4Video" "LLaMA-VID-13B" "PLLaVA-13B" "PLLaVA-34B" "LLaVA-NeXT-Video-34B" "LongVA" "LongVILA" "LongLLaVA" "Qwen2.5-VL")
+model_names=("VideoChatGPT" "VideoChat2" "VideoLLaVA" "LLaMA-VID" "MiniGPT4-Video" "PLLaVA" "LLaVA-NeXT-Video" "ShareGPT4Video" "LLaMA-VID-13B" "PLLaVA-13B" "PLLaVA-34B" "LLaVA-NeXT-Video-34B" "LongVA" "LongVILA" "LongLLaVA" "Qwen2.5VL")
 
 
 for i in "${!model_names[@]}"; do
