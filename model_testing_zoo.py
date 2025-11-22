@@ -36,15 +36,15 @@ CKPT_DIR = configs['CKPT_DIR']
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_name", type=str,
-                    default="", 
+                    default="",
                     choices=["VideoChatGPT", "VideoChat2", "VideoLLaVA", "LLaMA-VID", "VideoLaVIT", "MiniGPT4-Video", "PLLaVA", "LLaVA-NeXT-Video", "ShareGPT4Video",
                              "Gemini-1.5-pro", "GPT4O",
-                             "LLaVA", "GPT4V", 
-                             "Video-LLaMA-2-13B", "LLaMA-VID-13B", 
+                             "LLaVA", "GPT4V",
+                             "Video-LLaMA-2-13B", "LLaMA-VID-13B",
                              "PLLaVA-13B", "PLLaVA-34B", "LLaVA-NeXT-Video-34B",
                              "LongVA", "LongVILA", "LongLLaVA", "VideoLLaMB", "VideoXL", "InternLMXCO",
                              "VideoOnline", "VideoLLaMBOnline", "M4", "M4Online", "MiniCPM-o",
-                             "VideoLLaMA2", "M4-Audio", "M4-AudioOnline"])
+                             "VideoLLaMA2", "M4-Audio", "M4-AudioOnline", "Qwen2.5-VL"])
 args = parser.parse_args()
 TESTING_MODEL=args.model_name
 
@@ -186,6 +186,10 @@ def load_model(TESTING_MODEL):
         from intersuitonline_av_modeling import InterSuitOnlineAV
         ckpt_path = f"{CKPT_DIR}/M4-Audio-LongVA-7B-Qwen2"
         model = InterSuitOnlineAV({"model_path": ckpt_path, "device": 0})
+    elif TESTING_MODEL == "Qwen2.5-VL":
+        from qwen25vl_modeling import Qwen25VL
+        ckpt_path = f"{CKPT_DIR}/Qwen2.5-VL-3B-Instruct"
+        model = Qwen25VL({"model_path": ckpt_path, "device": 0})
 
     return model
 

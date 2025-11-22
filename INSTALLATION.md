@@ -197,3 +197,21 @@ pip install num2words
 
 - [GPT4V](https://openai.com/index/gpt-4v-system-card/)
     - Installation: make a .env under baselines/gpt4v; set `API_BASE` and `API_KEY`
+
+- [Qwen2.5-VL-3B](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct)
+    - Installation: [Instruction](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct#quickstart)
+    - Checkpoints:
+        - Source: [Qwen2.5-VL-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct)
+    - Structure:
+        ```
+            ├── checkpoints/Qwen2.5-VL-3B-Instruct
+        ```
+    - Environment setup:
+        ```bash
+        conda create -n qwen25vl python=3.10 -y
+        conda activate qwen25vl
+        pip install torch torchvision torchaudio
+        pip install transformers accelerate
+        pip install qwen-vl-utils
+        pip install decord
+        ```
